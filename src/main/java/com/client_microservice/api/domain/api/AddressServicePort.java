@@ -7,9 +7,9 @@ import com.client_microservice.api.domain.models.Address;
 
 public interface AddressServicePort {
 
-	Address createAddress(Address address);
+	Address create(Address address);
 
-	Address updateAddress(Long id, Address address);
+	Address update(Long id, Address address);
 
 	Optional<Address> getById(Long id);
 

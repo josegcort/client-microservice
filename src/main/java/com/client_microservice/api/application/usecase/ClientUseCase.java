@@ -16,7 +16,7 @@ public class ClientUseCase implements ClientServicePort {
 	private final ClientPersistencePort persistencePort;
 
 	@Override
-	public Client createClient(Client client) {
+	public Client create(Client client) {
 
 		Client newClient = new Client(null, client.getName(), client.getLastName(), client.getDocumentType(),
 				client.getDocumentNumber(), client.getAge(), client.getIsActive(), client.getAddresses());
@@ -25,7 +25,7 @@ public class ClientUseCase implements ClientServicePort {
 	}
 
 	@Override
-	public Client updateClient(Long id, Client client) {
+	public Client update(Long id, Client client) {
 		return persistencePort.findById(id).map(oldClient -> {
 
 			oldClient.setName(client.getName());
@@ -42,7 +42,7 @@ public class ClientUseCase implements ClientServicePort {
 	}
 
 	@Override
-	public Optional<Client> getClient(Long id) {
+	public Optional<Client> getById(Long id) {
 		return persistencePort.findById(id);
 	}
 

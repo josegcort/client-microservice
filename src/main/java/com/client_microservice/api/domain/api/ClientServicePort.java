@@ -7,11 +7,11 @@ import com.client_microservice.api.domain.models.Client;
 
 public interface ClientServicePort {
 
-	Client createClient(Client client);
+	Client create(Client client);
 
-	Client updateClient(Long id, Client client);
+	Client update(Long id, Client client);
 
-	Optional<Client> getClient(Long id);
+	Optional<Client> getById(Long id);
 
 	List<Client> getAll();
 

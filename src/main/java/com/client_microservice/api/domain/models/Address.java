@@ -1,5 +1,8 @@
 package com.client_microservice.api.domain.models;
 
+import lombok.ToString;
+
+@ToString
 public class Address {
 
 	private Long id;

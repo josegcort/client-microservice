@@ -16,7 +16,7 @@ public class AddressUseCase implements AddressServicePort {
 	private final AddressPersistencePort persistencePort;
 
 	@Override
-	public Address createAddress(Address address) {
+	public Address create(Address address) {
 
 		Address newAddress = new Address(null, address.getRegion(), address.getCity(), address.getFullAddress());
 
@@ -24,7 +24,7 @@ public class AddressUseCase implements AddressServicePort {
 	}
 
 	@Override
-	public Address updateAddress(Long id, Address address) {
+	public Address update(Long id, Address address) {
 		return persistencePort.findById(id).map(oldAddress -> {
 
 			oldAddress.setRegion(address.getRegion());

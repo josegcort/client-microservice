@@ -1,7 +1,11 @@
 package com.client_microservice.api.domain.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import lombok.ToString;
+
+@ToString
 public class Client {
 
 	private Long id;
@@ -12,7 +16,7 @@ public class Client {
 	private Integer age;
 	private Boolean isActive;
 
-	private List<Address> addresses;
+	private List<Address> addresses; 
 
 	public Client(Long id, String name, String lastName, String documentType, String documentNumber, Integer age,
 			Boolean isActive, List<Address> addresses) {
